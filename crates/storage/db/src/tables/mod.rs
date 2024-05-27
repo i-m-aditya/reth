@@ -377,6 +377,12 @@ tables! {
 
     /// Stores the history of client versions that have accessed the database with write privileges by unix timestamp in seconds.
     table VersionHistory<Key = u64, Value = ClientVersion>;
+     /// Stores QueueTransactions event data from L1 Message Queue
+    table SyncL1MessageQueue<Key = String, Value = Vec<u8>>;
+
+    /// Store the last synced L1 block number
+    table SyncL1LastBlockNumber<Key = String, Value = BlockNumber>;
+
 }
 
 // Alias types.
